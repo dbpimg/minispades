@@ -16,3 +16,4 @@ jobs:
       - run: node tests/smoke.cjs
       - run: node tests/match-flow.cjs
       - run: node tests/ai-strategy.cjs
+      - run: node tests/bidding.cjs
