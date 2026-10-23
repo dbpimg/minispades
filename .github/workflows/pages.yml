@@ -29,6 +29,7 @@ jobs:
           node tests/bidding.cjs
           node tests/joker-rules.cjs
           node tests/scoring.cjs
+          node tests/full-match.cjs
       - name: Prepare static website
         run: |
           mkdir -p _site
