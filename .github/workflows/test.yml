@@ -15,3 +15,4 @@ jobs:
           node-version: '22'
       - run: node tests/smoke.cjs
       - run: node tests/match-flow.cjs
+      - run: node tests/ai-strategy.cjs
