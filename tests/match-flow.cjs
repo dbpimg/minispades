@@ -5,7 +5,7 @@ const nodes=new Map,store=new Map;let timerId=0;const timers=new Map;
 function element(){return {style:{},children:[],hidden:false,textContent:'',className:'',setAttribute(){},replaceChildren(...x){this.children=x},append(...x){this.children.push(...x)}}}
 for(const id of ['north','south','east','west','trick','bids','board','status','sort','sound','next','restart'])nodes.set(id,element());
 const ctx={document:{getElementById:id=>nodes.get(id),createElement:element},localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)},setTimeout:(fn)=>{const id=++timerId;timers.set(id,fn);return id},clearTimeout:(id)=>timers.delete(id),console,Math,window:{}};
-vm.createContext(ctx);vm.runInContext(js.replace(/\}\)\(\);\s*$/,';globalThis.test={state:()=>g,play,bid,legal,score,start,cpu};})();'),ctx);
+vm.createContext(ctx);vm.runInContext(js.replace(/\}\)\(\);\s*$/,';globalThis.test={state:()=>g,play,bid,legal,score,start,cpu,chooseBot};})();'),ctx);
 const t=ctx.test;assert.equal(t.state().phase,'bid');assert.equal(t.state().hands.flat().length,52);
 t.bid(3);assert.equal(t.state().phase,'play');
 assert.equal(t.state().hands[0].length,13);
