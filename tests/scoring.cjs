@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const html=fs.readFileSync('index.html','utf8'),src=html.match(/<script>([\s\S]*?)<\/script>/)[1],nodes=new Map();
 function el(){return {hidden:false,textContent:'',style:{},children:[],setAttribute(){},replaceChildren(...v){this.children=v},append(...v){this.children.push(...v)}}}
-for(const id of ['north','south','east','west','trick','book-result','last-book-toggle','last-book','last-book-title','last-book-cards','bids','board','status','sort','sound','help','rules','next','restart'])nodes.set(id,el());
+for(const id of ['north','south','east','west','trick','book-result','last-book-toggle','last-book','last-book-title','last-book-cards','history-prev','history-next','history-count','history-reason','bids','board','status','sort','sound','help','rules','next','restart'])nodes.set(id,el());
 const store=new Map();const c={document:{getElementById:id=>nodes.get(id),createElement:el},localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)},setTimeout:()=>1,clearTimeout(){},Math,window:{},console};
 vm.createContext(c);vm.runInContext(src.replace(/\}\)\(\);\s*$/,';globalThis.qa={score,state:x=>g=x,load,card};})();'),c);
 const q=c.qa;
