@@ -18,3 +18,4 @@ jobs:
       - run: node tests/ai-strategy.cjs
       - run: node tests/bidding.cjs
       - run: node tests/joker-rules.cjs
+      - run: node tests/scoring.cjs

@@ -28,6 +28,7 @@ jobs:
           node tests/ai-strategy.cjs
           node tests/bidding.cjs
           node tests/joker-rules.cjs
+          node tests/scoring.cjs
       - name: Prepare static website
         run: |
           mkdir -p _site
