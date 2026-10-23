@@ -1,26 +1,31 @@
-# Jack Of Spades Marketing Games — MiniSpades
+# Jack Of Spades Marketing Games — MiniSpades Solo
 
-A free, browser-based **four-player partnership Spades** prototype. Human plays South, North is the AI partner, and West/East are computer opponents.
+A free, browser-only single-player partnership Spades game: **South is you**, and **North, East and West are computer-controlled**. No second human, networking, login or payment is required.
 
-## Run
-Open `index.html` in a modern browser. No install, backend or paid services needed. This repository is separate from Quick Rummy (`dbpimg/sb`).
+## Play locally
+Open `index.html` in a modern browser. A single HTML file provides the game UI and rules. GitHub Pages publication has **not yet** been configured or verified.
 
-## Currently implemented (Sprint 1)
-- 52-card shuffle and four 13-card hands
-- Human bidding, automatically generated AI bids
-- Human plays legal cards, AI automatically plays all three other seats
-- Must follow led suit when holding it; spades cannot be led until broken unless only spades remain
-- Trump-winner determination, trick counter, partnership basic contract scoring
-- Next hand and New match controls
-- Mobile-friendly green felt card table
+## Solo gameplay
+- All 52 cards are dealt into four 13-card hands. You choose South's bid; the computer provides the other three bids.
+- You play only South's cards. The three computer players automatically handle their decisions.
+- Follow suit if possible. Spades are trump and cannot be led until broken, unless a hand contains only spades.
+- The current hand finishes after 13 tricks. North/South and East/West earn contract points; extra tricks count toward bags and 10 bags impose a 100-point penalty.
+- Play successive hands or start a new match. This is a quick-play Spades variant until complete bidding, nil and standard match-end rules are implemented.
 
-## Work required before a proper public beta
-- **Complete standard bidding phase** for every seat, visible sequential bids and optional nil/bag rule settings
-- Score to a target, bags and sandbags, nil/blind nil if enabled
-- Review lead player rotation and dealer rotation; improve trick winner animation and clear last-trick view
-- Stronger AI partners and opponents
-- Round persistence, instructions, accessibility and usability tests
-- Automated game rules/integration tests and GitHub Pages deployment workflow
-- Optional YouTube Playables SDK only after developer-portal access opens
+## Deluxe table sprint
+- Deep emerald felt table, wood trim and card shadows
+- Face-up human cards with corner suits, layered blue-backed computer cards
+- Automatic computer turns and table-card feedback
+- Optional short sound tones (initially off), hand sorting by suit or rank
+- Responsive horizontal hand scrolling and reduced-motion preference
+- GitHub Actions JavaScript syntax and structure smoke checks
 
-**Development status:** initial playable prototype, not yet production-certified or YouTube-submitted. No gambling or money wagering.
+## Planned before public beta
+1. Standard dealer/bidding rotation and nil scoring; formal score-to-500 match victory.
+2. Full-turn integration tests, automated game simulations, trick visibility and scoring regression tests.
+3. Persistent local game state and interrupted-AI recovery.
+4. Richer AI for partner coordination, gameplay tutorials and accessibility.
+5. GitHub Pages beta release and browser/device testing.
+6. Dedicated YouTube Playables adapter and ZIP if/when developer access is granted.
+
+This is a **solo MVP prototype**, not an officially tested or YouTube-certified game. No real-money wagering.
